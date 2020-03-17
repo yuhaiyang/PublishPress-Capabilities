@@ -87,11 +87,11 @@ a.cme-neg-all {
   vertical-align: middle;
 }
 a.cme-switch-all {
-color: black;
-font-size: 1.5em;
-padding-right: 1px;
-vertical-align: middle;
-text-decoration: line-through !important;
+  color: black;
+  font-size: 1.5em;
+  padding-right: 1px;
+  vertical-align: middle;
+  text-decoration: line-through;
 }
 td.cap-yes span {
   color: green;
@@ -233,13 +233,19 @@ div.publishpress-caps-manage span.manage-members a:hover {
 }
 .pressshack-admin-wrapper {
   /* Roles filter */
+  /*input[name="SaveRole"] {
+    line-height: 36px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 1.2em;
+  }*/
   /* Horizontal tabs */
 }
-.pressshack-admin-wrapper input[name="SaveRole"] {
-  line-height: 36px;
-  padding-left: 15px;
-  padding-right: 15px;
-  font-size: 1.2em;
+.pressshack-admin-wrapper .pp-button-link {
+  line-height: 28px;
+}
+.pressshack-admin-wrapper .pp-button-link-danger {
+  color: red;
 }
 .pressshack-admin-wrapper #roleslist {
   margin-top: 10px;
