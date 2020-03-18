@@ -246,6 +246,7 @@ div.publishpress-caps-manage span.manage-members a:hover {
 }
 .pressshack-admin-wrapper .pp-delete-role-wrapper {
   margin-left: 20px;
+  line-height: 28px;
 }
 .pressshack-admin-wrapper #roleslist {
   margin-top: 10px;
