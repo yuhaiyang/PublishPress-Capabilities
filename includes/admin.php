@@ -982,6 +982,18 @@ if( defined('PRESSPERMIT_ACTIVE') ) {
                 <!-- .postbox -->
 
                 <p>
+                    <input type="hidden" name="action" value="update" />
+                    <input type="hidden" name="current" value="<?php echo $default; ?>" />
+                    <input type="submit" name="SaveRole" value="<?php _e('Save Changes', 'capsman-enhanced') ?>" class="button-primary" /> &nbsp;
+
+                    <?php if ( current_user_can('administrator') && 'administrator' != $default ) : ?>
+                        <a title="<?php echo esc_attr(__('Delete this role', 'capsman-enhanced')) ?>" class="pp-button-link pp-button-link-danger" href="<?php echo wp_nonce_url("admin.php?page={$this->ID}&amp;action=delete&amp;role={$default}", 'delete-role_' . $default); ?>" onclick="if ( confirm('<?php echo esc_js(sprintf(__("You are about to delete the %s role.\n\n 'Cancel' to stop, 'OK' to delete.", 'capsman-enhanced'), $roles[$default])); ?>') ) { return true;}return false;"><?php _e('Delete Role', 'capsman-enhanced')?></a>
+                    <?php endif; ?>
+                </p>
+
+                <hr>
+
+                <p>
                     <?php
                     $msg = __( '<strong>Note:</strong> Capability changes <strong>remain in the database</strong> after plugin deactivation.', 'capsman-enhanced' );
 
@@ -1130,6 +1142,9 @@ if( defined('PRESSPERMIT_ACTIVE') ) {
 				<a class="ak-delete" title="<?php echo esc_attr(__('Delete this role', 'capsman-enhanced')) ?>" href="<?php echo wp_nonce_url("admin.php?page={$this->ID}&amp;action=delete&amp;role={$default}", 'delete-role_' . $default); ?>" onclick="if ( confirm('<?php echo esc_js(sprintf(__("You are about to delete the %s role.\n\n 'Cancel' to stop, 'OK' to delete.", 'capsman-enhanced'), $roles[$default])); ?>') ) { return true;}return false;"><?php _e('Delete Role', 'capsman-enhanced')?></a>
 			<?php endif; ?>
 		</p>
+
+        //
+        ?>
 		
 		</td>
 		<td class="sidebar">
