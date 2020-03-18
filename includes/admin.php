@@ -1199,6 +1199,7 @@ if( defined('PRESSPERMIT_ACTIVE') ) {
 	</form>
 
 	<?php if (!defined('PUBLISHPRESS_CAPS_PRO_VERSION') || get_option('cme_display_branding')) {
+        //@TODO uncomment this
 		//cme_publishpressFooter();
 	} 
 	?>
