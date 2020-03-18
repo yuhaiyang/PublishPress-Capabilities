@@ -77,14 +77,14 @@ class Capsman_PP_UI {
 		?>
 		
 		<?php if ( $support_pp_only_roles && ! in_array( $default, array( /*'subscriber', 'contributor', 'author', 'editor',*/ 'administrator' ) ) ) : ?>
-		<div style="float:right">
+		<span class="pp-delete-role-wrapper">
 			<?php
 			pp_refresh_options();
 			$pp_only = (array) pp_capabilities_get_permissions_option( 'supplemental_role_defs' );
 			$checked = ( in_array( $default, $pp_only ) ) ? 'checked="checked"': '';
 			?>
 			<label for="pp_only_role" title="<?php _e('Make role available for supplemental assignment to Permission Groups only', 'capsman-enhanced');?>"><input type="checkbox" name="pp_only_role" id="pp_only_role" value="1" <?php echo $checked;?>> <?php _e('hidden role', 'capsman-enhanced'); ?> </label>
-		</div>
+		</span>
 		<?php endif; ?>
 	<?php
 		return $support_pp_only_roles;

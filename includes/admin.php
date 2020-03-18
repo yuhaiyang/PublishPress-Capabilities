@@ -986,9 +986,108 @@ if( defined('PRESSPERMIT_ACTIVE') ) {
                     <input type="hidden" name="current" value="<?php echo $default; ?>" />
                     <input type="submit" name="SaveRole" value="<?php _e('Save Changes', 'capsman-enhanced') ?>" class="button-primary" /> &nbsp;
 
-                    <?php if ( current_user_can('administrator') && 'administrator' != $default ) : ?>
+                    <?php
+                    // Delete role link
+                    if ( current_user_can('administrator') && 'administrator' != $default ) : ?>
                         <a title="<?php echo esc_attr(__('Delete this role', 'capsman-enhanced')) ?>" class="pp-button-link pp-button-link-danger" href="<?php echo wp_nonce_url("admin.php?page={$this->ID}&amp;action=delete&amp;role={$default}", 'delete-role_' . $default); ?>" onclick="if ( confirm('<?php echo esc_js(sprintf(__("You are about to delete the %s role.\n\n 'Cancel' to stop, 'OK' to delete.", 'capsman-enhanced'), $roles[$default])); ?>') ) { return true;}return false;"><?php _e('Delete Role', 'capsman-enhanced')?></a>
-                    <?php endif; ?>
+                    <?php
+                    endif;
+
+                    // Hidden role checkbox
+                    $support_pp_only_roles = ( defined('PRESSPERMIT_ACTIVE') ) ? $pp_ui->pp_only_roles_ui( $default ) : false;
+                    cme_network_role_ui( $default );
+                    ?>
+
+                    <?php
+                    if ( defined( 'PRESSPERMIT_ACTIVE' ) ) {
+                        $pp_ui->show_capability_hints( $default );
+                    }
+                    ?>
+
+                    <script type="text/javascript">
+                        /* <![CDATA[ */
+                        jQuery(document).ready( function($) {
+                            $('a[href="#pp-more"]').click( function() {
+                                $('#pp_features').show();
+                                return false;
+                            });
+                            $('a[href="#pp-hide"]').click( function() {
+                                $('#pp_features').hide();
+                                return false;
+                            });
+                        });
+                        /* ]]> */
+                    </script>
+
+                    <?php /* play.png icon by Pavel: http://kde-look.org/usermanager/search.php?username=InFeRnODeMoN */ ?>
+
+                    <div id="pp_features" style="display:none"><div class="pp-logo"><a href="https://publishpress.com/presspermit/"><img src="<?php echo $img_url;?>pp-logo.png" alt="<?php _e('PublishPress Permissions', 'capsman-enhanced');?>" /></a></div><div class="features-wrap"><ul class="pp-features">
+                            <li>
+                                <?php _e( "Automatically define type-specific capabilities for your custom post types and taxonomies", 'capsman-enhanced' );?>
+                                <a href="https://presspermit.com/tutorial/regulate-post-type-access" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
+
+                            <li>
+                                <?php _e( "Assign standard WP roles supplementally for a specific post type", 'capsman-enhanced' );?>
+                                <a href="https://presspermit.com/tutorial/regulate-post-type-access" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
+
+                            <li>
+                                <?php _e( "Assign custom WP roles supplementally for a specific post type <em>(Pro)</em>", 'capsman-enhanced' );?>
+                            </li>
+
+                            <li>
+                                <?php _e( "Customize reading permissions per-category or per-post", 'capsman-enhanced' );?>
+                                <a href="https://presspermit.com/tutorial/category-exceptions" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
+
+                            <li>
+                                <?php _e( "Customize editing permissions per-category or per-post <em>(Pro)</em>", 'capsman-enhanced' );?>
+                                <a href="https://presspermit.com/tutorial/page-editing-exceptions" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
+
+                            <li>
+                                <?php _e( "Custom Post Visibility statuses, fully implemented throughout wp-admin <em>(Pro)</em>", 'capsman-enhanced' );?>
+                                <a href="https://presspermit.com/tutorial/custom-post-visibility" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
+
+                            <li>
+                                <?php _e( "Custom Moderation statuses for access-controlled, multi-step publishing workflow <em>(Pro)</em>", 'capsman-enhanced' );?>
+                                <a href="https://presspermit.com/tutorial/multi-step-moderation" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
+
+                            <li>
+                                <?php _e( "Regulate permissions for Edit Flow post statuses <em>(Pro)</em>", 'capsman-enhanced' );?>
+                                <a href="https://presspermit.com/tutorial/edit-flow-integration" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
+
+                            <li>
+                                <?php _e( "Customize the moderated editing of published content with Revisionary or Post Forking <em>(Pro)</em>", 'capsman-enhanced' );?>
+                                <a href="https://presspermit.com/tutorial/published-content-revision" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
+
+                            <li>
+                                <?php _e( "Grant Spectator, Participant or Moderator access to specific bbPress forums <em>(Pro)</em>", 'capsman-enhanced' );?>
+                            </li>
+
+                            <li>
+                                <?php _e( "Grant supplemental content permissions to a BuddyPress group <em>(Pro)</em>", 'capsman-enhanced' );?>
+                                <a href="https://presspermit.com/tutorial/buddypress-content-permissions" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
+
+                            <li>
+                                <?php _e( "WPML integration to mirror permissions to translations <em>(Pro)</em>", 'capsman-enhanced' );?>
+                            </li>
+
+                            <li>
+                                <?php _e( "Member support forum", 'capsman-enhanced' );?>
+                            </li>
+
+                        </ul></div>
+
+                    <?php
+                    echo '<div>';
+                    printf( __('%1$sgrab%2$s %3$s', 'capsman-enhanced'), '<strong>', '</strong>', '<span class="plugins update-message"><a href="' . cme_plugin_info_url('press-permit-core') . '" class="thickbox" title="' . sprintf( __('%s (free install)', 'capsman-enhanced'), 'Permissions Pro' ) . '">Permissions Pro</a></span>' );
+                    echo '&nbsp;&nbsp;&bull;&nbsp;&nbsp;';
+                    printf( __('%1$sbuy%2$s %3$s', 'capsman-enhanced'), '<strong>', '</strong>',  '<a href="https://publishpress.com/presspermit/" target="_blank" title="' . sprintf( __('%s info/purchase', 'capsman-enhanced'), 'Permissions Pro' ) . '">Permissions&nbsp;Pro</a>' );
+                    echo '&nbsp;&nbsp;&bull;&nbsp;&nbsp;';
+                    echo '<a href="#pp-hide">hide</a>';
+                    echo '</div></div>';
+
+                    //
+
+                    ?>
                 </p>
 
                 <hr>
@@ -1026,112 +1125,6 @@ if( defined('PRESSPERMIT_ACTIVE') ) {
 	<table id="akmin">
 	<tr>
 		<td class="content">
-		<dl>
-			<dt>
-
-			</dt>
-			
-			<dd>
-
-
-				<?php
-				if ( defined( 'PRESSPERMIT_ACTIVE' ) ) {
-					$pp_ui->show_capability_hints( $default );
-				}
-				?>
-
-				<script type="text/javascript">
-				/* <![CDATA[ */
-				jQuery(document).ready( function($) {
-					$('a[href="#pp-more"]').click( function() {
-						$('#pp_features').show();
-						return false;
-					});
-					$('a[href="#pp-hide"]').click( function() {
-						$('#pp_features').hide();
-						return false;
-					});
-				});
-				/* ]]> */
-				</script>
-
-				<?php /* play.png icon by Pavel: http://kde-look.org/usermanager/search.php?username=InFeRnODeMoN */ ?>
-
-				<br /><div id="pp_features" style="display:none"><div class="pp-logo"><a href="https://publishpress.com/presspermit/"><img src="<?php echo $img_url;?>pp-logo.png" alt="<?php _e('PublishPress Permissions', 'capsman-enhanced');?>" /></a></div><div class="features-wrap"><ul class="pp-features">
-				<li>
-				<?php _e( "Automatically define type-specific capabilities for your custom post types and taxonomies", 'capsman-enhanced' );?>
-				<a href="https://presspermit.com/tutorial/regulate-post-type-access" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
-
-				<li>
-				<?php _e( "Assign standard WP roles supplementally for a specific post type", 'capsman-enhanced' );?>
-				<a href="https://presspermit.com/tutorial/regulate-post-type-access" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
-
-				<li>
-				<?php _e( "Assign custom WP roles supplementally for a specific post type <em>(Pro)</em>", 'capsman-enhanced' );?>
-				</li>
-
-				<li>
-				<?php _e( "Customize reading permissions per-category or per-post", 'capsman-enhanced' );?>
-				<a href="https://presspermit.com/tutorial/category-exceptions" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
-
-				<li>
-				<?php _e( "Customize editing permissions per-category or per-post <em>(Pro)</em>", 'capsman-enhanced' );?>
-				<a href="https://presspermit.com/tutorial/page-editing-exceptions" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
-
-				<li>
-				<?php _e( "Custom Post Visibility statuses, fully implemented throughout wp-admin <em>(Pro)</em>", 'capsman-enhanced' );?>
-				<a href="https://presspermit.com/tutorial/custom-post-visibility" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
-
-				<li>
-				<?php _e( "Custom Moderation statuses for access-controlled, multi-step publishing workflow <em>(Pro)</em>", 'capsman-enhanced' );?>
-				<a href="https://presspermit.com/tutorial/multi-step-moderation" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
-
-				<li>
-				<?php _e( "Regulate permissions for Edit Flow post statuses <em>(Pro)</em>", 'capsman-enhanced' );?>
-				<a href="https://presspermit.com/tutorial/edit-flow-integration" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
-
-				<li>
-				<?php _e( "Customize the moderated editing of published content with Revisionary or Post Forking <em>(Pro)</em>", 'capsman-enhanced' );?>
-				<a href="https://presspermit.com/tutorial/published-content-revision" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
-
-				<li>
-				<?php _e( "Grant Spectator, Participant or Moderator access to specific bbPress forums <em>(Pro)</em>", 'capsman-enhanced' );?>
-				</li>
-
-				<li>
-				<?php _e( "Grant supplemental content permissions to a BuddyPress group <em>(Pro)</em>", 'capsman-enhanced' );?>
-				<a href="https://presspermit.com/tutorial/buddypress-content-permissions" target="_blank"><img class="cme-play" alt="*" src="<?php echo $img_url;?>play.png" /></a></li>
-
-				<li>
-				<?php _e( "WPML integration to mirror permissions to translations <em>(Pro)</em>", 'capsman-enhanced' );?>
-				</li>
-
-				<li>
-				<?php _e( "Member support forum", 'capsman-enhanced' );?>
-				</li>
-
-				</ul></div>
-
-				<?php
-				echo '<div>';
-				printf( __('%1$sgrab%2$s %3$s', 'capsman-enhanced'), '<strong>', '</strong>', '<span class="plugins update-message"><a href="' . cme_plugin_info_url('press-permit-core') . '" class="thickbox" title="' . sprintf( __('%s (free install)', 'capsman-enhanced'), 'Permissions Pro' ) . '">Permissions Pro</a></span>' );
-				echo '&nbsp;&nbsp;&bull;&nbsp;&nbsp;';
-				printf( __('%1$sbuy%2$s %3$s', 'capsman-enhanced'), '<strong>', '</strong>',  '<a href="https://publishpress.com/presspermit/" target="_blank" title="' . sprintf( __('%s info/purchase', 'capsman-enhanced'), 'Permissions Pro' ) . '">Permissions&nbsp;Pro</a>' );
-				echo '&nbsp;&nbsp;&bull;&nbsp;&nbsp;';
-				echo '<a href="#pp-hide">hide</a>';
-				echo '</div></div>';
-
-                //
-
-                ?>
-
-			</dd>
-		</dl>
-
-		<?php
-		$support_pp_only_roles = ( defined('PRESSPERMIT_ACTIVE') ) ? $pp_ui->pp_only_roles_ui( $default ) : false;
-		cme_network_role_ui( $default );
-		?>
 		
 		</td>
 		<td class="sidebar">
