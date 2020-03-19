@@ -93,9 +93,9 @@ class Capsman_PP_UI {
 	// Note: CME can now impose type-specific capabilities without Press Permit Core active
 	function pp_types_ui( $defined_types ) {
 		?>
-		<dl>
-			<dt><?php _e('Type-Specific Capabilities', 'capsman-enhanced'); ?></dt>
-			<dd style="text-align:center;">
+		<div class="postbox">
+            <h2 class="hndle ui-sortable-handle"><?php _e('Type-Specific Capabilities', 'capsman-enhanced'); ?></h2>
+			<div class="inside">
 				<?php
 				$caption = __( 'Ensure permissions can be controlled separately from other post types.', 'capsman-enhanced' );
 				echo "<p class='cme-hint'>$caption</p>";
@@ -158,17 +158,17 @@ class Capsman_PP_UI {
 				
 				
 				<input type="submit" name="update_filtered_types" value="<?php _e('Update', 'capsman-enhanced') ?>" class="button" />
-			</dd>
-		</dl>
+			</div>
+		</div>
 		<?php
 	}
 	
 	// Note: CME can now impose type-specific capabilities without Press Permit Core active
 	function pp_taxonomies_ui( $defined_taxonomies ) {
 		?>
-		<dl>
-			<dt><?php _e('Taxonomy-Specific Capabilities', 'capsman-enhanced'); ?></dt>
-			<dd style="text-align:center;">
+        <div class="postbox">
+            <h2 class="hndle ui-sortable-handle"><?php _e('Taxonomy-Specific Capabilities', 'capsman-enhanced'); ?></h2>
+			<div class="inside">
 				<?php
 				$caption = __( 'Ensure permissions can be controlled separately from other taxonomies.', 'capsman-enhanced' );
 				echo "<p class='cme-hint'>$caption</p>";
@@ -219,12 +219,12 @@ class Capsman_PP_UI {
 				</table>
 				
 				<input type="submit" name="update_filtered_taxonomies" value="<?php _e('Update', 'capsman-enhanced') ?>" class="button" />
-			</dd>
-		</dl>
-		
-		<dl>
-			<dt><?php _e('Detailed Taxonomy Capabilities', 'capsman-enhanced'); ?></dt>
-			<dd style="text-align:center;">
+			</div>
+		</div>
+
+        <div class="postbox">
+            <h2 class="hndle ui-sortable-handle"><?php _e('Detailed Taxonomy Capabilities', 'capsman-enhanced'); ?></h2>
+			<div class="inside">
 				<?php
 				$caption = __( 'Enforce Edit, Delete and Assign capabilities separately from Management capability.', 'capsman-enhanced' );
 				echo "<p class='cme-hint'>$caption</p>";
@@ -275,8 +275,8 @@ class Capsman_PP_UI {
 				</table>
 				
 				<input type="submit" name="update_detailed_taxonomies" value="<?php _e('Update', 'capsman-enhanced') ?>" class="button" />
-			</dd>
-		</dl>
+			</div>
+		</div>
 		<?php
 	}
 }
