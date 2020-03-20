@@ -227,7 +227,7 @@ div.publishpress-caps-manage span.manage-members a:hover {
   text-decoration: underline;
   color: #655997;
 }
-.pressshack-admin-wrapper {
+.publishpress-admin-wrapper {
   /* Roles filter */
   /*input[name="SaveRole"] {
     line-height: 36px;
@@ -236,31 +236,89 @@ div.publishpress-caps-manage span.manage-members a:hover {
     font-size: 1.2em;
   }*/
   /* Checkboxes */
+  /* Buttons */
   /* Horizontal tabs */
 }
-.pressshack-admin-wrapper .pp-button-link {
+.publishpress-admin-wrapper .pp-button-link {
   line-height: 28px;
 }
-.pressshack-admin-wrapper .pp-button-link-danger {
+.publishpress-admin-wrapper .pp-button-link-danger {
   color: red;
 }
-.pressshack-admin-wrapper .pp-delete-role-wrapper {
+.publishpress-admin-wrapper .pp-delete-role-wrapper {
   margin-left: 20px;
   line-height: 28px;
 }
-.pressshack-admin-wrapper #roleslist {
+.publishpress-admin-wrapper .pp-default-button {
+  border-color: #655997;
+  color: #655997;
+  border-width: 1px;
+}
+.publishpress-admin-wrapper .pp-default-button:focus {
+  color: #483f6b;
+  border-color: #483f6b;
+  box-shadow: 0 0 0 1px #483f6b;
+  -moz-box-shadow: 0 0 0 1px #483f6b;
+  -webkit-box-shadow: 0 0 0 1px #483f6b;
+}
+.publishpress-admin-wrapper .pp-default-button:hover,
+.publishpress-admin-wrapper .pp-default-button:active {
+  color: #483f6b;
+  border-color: #483f6b;
+}
+.publishpress-admin-wrapper .pp-primary-button {
+  background: #655997;
+  color: #fff;
+  border-color: #655997;
+  border-width: 1px;
+}
+.publishpress-admin-wrapper .pp-primary-button:focus {
+  background: #483f6b;
+  color: #fff;
+  border-color: #483f6b;
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px #483f6b;
+  -moz-box-shadow: 0 0 0 1px #fff, 0 0 0 3px #483f6b;
+  -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 3px #483f6b;
+}
+.publishpress-admin-wrapper .pp-primary-button:hover,
+.publishpress-admin-wrapper .pp-primary-button:active {
+  background: #483f6b;
+  color: #fff;
+  border-color: #483f6b;
+}
+.publishpress-admin-wrapper .pp-pro-button {
+  background: #feb123;
+  color: #222;
+  border-color: #feb123;
+  border-width: 1px;
+}
+.publishpress-admin-wrapper .pp-pro-button:focus {
+  background: #febe47;
+  color: #222;
+  border-color: #febe47;
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px #febe47;
+  -moz-box-shadow: 0 0 0 1px #fff, 0 0 0 3px #febe47;
+  -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 3px #febe47;
+}
+.publishpress-admin-wrapper .pp-pro-button:hover,
+.publishpress-admin-wrapper .pp-pro-button:active {
+  background: #febe47;
+  color: #222;
+  border-color: #febe47;
+}
+.publishpress-admin-wrapper #roleslist {
   margin-top: 10px;
 }
-.pressshack-admin-wrapper .pp-cap-horizontal-tabs {
+.publishpress-admin-wrapper .pp-cap-horizontal-tabs {
   display: table;
 }
-.pressshack-admin-wrapper .pp-cap-horizontal-tabs__tabs {
+.publishpress-admin-wrapper .pp-cap-horizontal-tabs__tabs {
   color: inherit;
 }
-.pressshack-admin-wrapper .pp-cap-horizontal-tabs__tabs > ul {
+.publishpress-admin-wrapper .pp-cap-horizontal-tabs__tabs > ul {
   margin: 0;
 }
-.pressshack-admin-wrapper .pp-cap-horizontal-tabs__tabs > ul > li {
+.publishpress-admin-wrapper .pp-cap-horizontal-tabs__tabs > ul > li {
   background: #f2f2f2;
   cursor: pointer;
   padding: 14px 10px;
@@ -269,53 +327,53 @@ div.publishpress-caps-manage span.manage-members a:hover {
   border-bottom: 1px solid #ccd0d4;
   transition: background .2s linear;
 }
-.pressshack-admin-wrapper .pp-cap-horizontal-tabs__tabs > ul > li.pp-cap-tab__active,
-.pressshack-admin-wrapper .pp-cap-horizontal-tabs__tabs > ul > li:hover:not(.pp-cap-tab__active) {
+.publishpress-admin-wrapper .pp-cap-horizontal-tabs__tabs > ul > li.pp-cap-tab__active,
+.publishpress-admin-wrapper .pp-cap-horizontal-tabs__tabs > ul > li:hover:not(.pp-cap-tab__active) {
   background: #fff;
 }
-.pressshack-admin-wrapper .pp-cap-horizontal-tabs__tabs > ul > li.pp-cap-tab__active {
+.publishpress-admin-wrapper .pp-cap-horizontal-tabs__tabs > ul > li.pp-cap-tab__active {
   border-right-color: transparent;
 }
-.pressshack-admin-wrapper .pp-cap-horizontal-tabs__contents {
+.publishpress-admin-wrapper .pp-cap-horizontal-tabs__contents {
   padding: 0 14px;
   box-sizing: border-box;
 }
-.pressshack-admin-wrapper .pp-cap-horizontal-tabs__contents > div > h3 {
+.publishpress-admin-wrapper .pp-cap-horizontal-tabs__contents > div > h3 {
   font-size: 1.2em;
 }
 @media (min-width: 851px) {
-  .pressshack-admin-wrapper {
+  .publishpress-admin-wrapper {
     /* Roles filter */
     /* Horizontal tabs */
   }
-  .pressshack-admin-wrapper input[name="SaveRole"] {
+  .publishpress-admin-wrapper input[name="SaveRole"] {
     float: right;
   }
-  .pressshack-admin-wrapper .pp-cap-horizontal-tabs__tabs,
-  .pressshack-admin-wrapper .pp-cap-horizontal-tabs__contents {
+  .publishpress-admin-wrapper .pp-cap-horizontal-tabs__tabs,
+  .publishpress-admin-wrapper .pp-cap-horizontal-tabs__contents {
     float: left;
   }
-  .pressshack-admin-wrapper .pp-cap-horizontal-tabs__tabs {
+  .publishpress-admin-wrapper .pp-cap-horizontal-tabs__tabs {
     width: 30%;
   }
-  .pressshack-admin-wrapper .pp-cap-horizontal-tabs__contents {
+  .publishpress-admin-wrapper .pp-cap-horizontal-tabs__contents {
     width: 70%;
   }
-  .pressshack-admin-wrapper .pp-cap-horizontal-tabs__contents > div {
+  .publishpress-admin-wrapper .pp-cap-horizontal-tabs__contents > div {
     display: none;
   }
-  .pressshack-admin-wrapper .pp-cap-horizontal-tabs__contents > div.pp-cap-content__active {
+  .publishpress-admin-wrapper .pp-cap-horizontal-tabs__contents > div.pp-cap-content__active {
     display: block;
   }
-  .pressshack-admin-wrapper .pp-cap-horizontal-tabs__contents > div > h3 {
+  .publishpress-admin-wrapper .pp-cap-horizontal-tabs__contents > div > h3 {
     display: none;
   }
 }
 @media (max-width: 850px) {
-  .pressshack-admin-wrapper {
+  .publishpress-admin-wrapper {
     /* Horizontal tabs */
   }
-  .pressshack-admin-wrapper .pp-cap-horizontal-tabs__tabs {
+  .publishpress-admin-wrapper .pp-cap-horizontal-tabs__tabs {
     display: none;
   }
 }

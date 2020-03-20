@@ -157,7 +157,7 @@ class Capsman_PP_UI {
 					</div>
 				
 				
-				<input type="submit" name="update_filtered_types" value="<?php _e('Update', 'capsman-enhanced') ?>" class="button" />
+				<input type="submit" name="update_filtered_types" value="<?php _e('Update', 'capsman-enhanced') ?>" class="button pp-default-button" />
 			</div>
 		</div>
 		<?php
@@ -218,7 +218,7 @@ class Capsman_PP_UI {
 				</tr>
 				</table>
 				
-				<input type="submit" name="update_filtered_taxonomies" value="<?php _e('Update', 'capsman-enhanced') ?>" class="button" />
+				<input type="submit" name="update_filtered_taxonomies" value="<?php _e('Update', 'capsman-enhanced') ?>" class="button pp-default-button" />
 			</div>
 		</div>
 
@@ -274,7 +274,7 @@ class Capsman_PP_UI {
 				</tr>
 				</table>
 				
-				<input type="submit" name="update_detailed_taxonomies" value="<?php _e('Update', 'capsman-enhanced') ?>" class="button" />
+				<input type="submit" name="update_detailed_taxonomies" value="<?php _e('Update', 'capsman-enhanced') ?>" class="button pp-default-button" />
 			</div>
 		</div>
 		<?php

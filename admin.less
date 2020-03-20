@@ -217,7 +217,7 @@ div.publishpress-caps-manage span.manage-members a:hover {text-decoration: under
 //div.publishpress-headline .cme-subtext a {font-weight: bold}
 //div.publishpress-headline .cme-subtext a:hover {text-decoration: underline}
 
-.pressshack-admin-wrapper {
+.publishpress-admin-wrapper {
 
   /* Roles filter */
   /*input[name="SaveRole"] {
@@ -239,6 +239,70 @@ div.publishpress-caps-manage span.manage-members a:hover {text-decoration: under
   .pp-delete-role-wrapper {
     margin-left: 20px;
     line-height: 28px;
+  }
+
+  /* Buttons */
+  .pp-default-button {
+    border-color: #655997;
+    color: #655997;
+    border-width: 1px;
+
+    &:focus {
+      color: #483f6b;
+      border-color: #483f6b;
+      box-shadow: 0 0 0 1px #483f6b;
+      -moz-box-shadow: 0 0 0 1px #483f6b;
+      -webkit-box-shadow: 0 0 0 1px #483f6b;
+    }
+    &:hover,
+    &:active {
+      color: #483f6b;
+      border-color: #483f6b;
+    }
+  }
+  .pp-primary-button {
+    background: #655997;
+    color: #fff;
+    border-color: #655997;
+    border-width: 1px;
+
+    &:focus {
+      background: #483f6b;
+      color: #fff;
+      border-color: #483f6b;
+      box-shadow: 0 0 0 1px #fff, 0 0 0 3px #483f6b;
+      -moz-box-shadow: 0 0 0 1px #fff, 0 0 0 3px #483f6b;
+      -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 3px #483f6b;
+    }
+
+    &:hover,
+    &:active {
+      background: #483f6b;
+      color: #fff;
+      border-color: #483f6b;
+    }
+  }
+
+  .pp-pro-button {
+    background: #feb123;
+    color: #222;
+    border-color: #feb123;
+    border-width: 1px;
+
+    &:focus {
+      background: #febe47;
+      color: #222;
+      border-color: #febe47;
+      box-shadow: 0 0 0 1px #fff, 0 0 0 3px #febe47;
+      -moz-box-shadow: 0 0 0 1px #fff, 0 0 0 3px #febe47;
+      -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 3px #febe47;
+    }
+    &:hover,
+    &:active {
+      background: #febe47;
+      color: #222;
+      border-color: #febe47;
+    }
   }
 
   /* Horizontal tabs */

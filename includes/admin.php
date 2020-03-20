@@ -49,7 +49,7 @@ if( defined('PRESSPERMIT_ACTIVE') ) {
 	$pp_metagroup_caps = array();
 }
 ?>
-<div class="wrap publishpress-caps-manage pressshack-admin-wrapper">
+<div class="wrap publishpress-caps-manage publishpress-admin-wrapper">
 	<?php if( defined('PRESSPERMIT_ACTIVE') ) :
 		pp_icon();
 		$style = 'style="height:60px;"';
@@ -105,7 +105,7 @@ if( defined('PRESSPERMIT_ACTIVE') ) {
                             /* ]]> */
                         </script>
 
-                        <input type="submit" name="SaveRole" value="<?php _e('Save Changes', 'capsman-enhanced') ?>" class="button-primary" />
+                        <input type="submit" name="SaveRole" value="<?php _e('Save Changes', 'capsman-enhanced') ?>" class="button-primary pp-primary-button" />
                     </div>
 
                     <div class="inside">
@@ -984,7 +984,7 @@ if( defined('PRESSPERMIT_ACTIVE') ) {
                 <p>
                     <input type="hidden" name="action" value="update" />
                     <input type="hidden" name="current" value="<?php echo $default; ?>" />
-                    <input type="submit" name="SaveRole" value="<?php _e('Save Changes', 'capsman-enhanced') ?>" class="button-primary" /> &nbsp;
+                    <input type="submit" name="SaveRole" value="<?php _e('Save Changes', 'capsman-enhanced') ?>" class="button-primary pp-primary-button" /> &nbsp;
 
                     <?php
                     // Delete role link
@@ -1120,15 +1120,15 @@ if( defined('PRESSPERMIT_ACTIVE') ) {
                     <h2 class="hndle ui-sortable-handle"><?php _e('Create New Role', 'capsman-enhanced'); ?></h2>
                     <div class="inside">
                         <?php $class = ( $support_pp_only_roles ) ? 'tight-text' : 'regular-text'; ?>
-                        <p><input type="text" name="create-name" class="<?php echo $class;?>" placeholder="<?php _e('Role Name', 'capsman-enhanced') ?>" />
-
-                            <?php if( $support_pp_only_roles ) : ?>
-                                <label for="new_role_pp_only" title="<?php _e('Make role available for supplemental assignment to Permission Groups only', 'capsman-enhanced');?>"> <input type="checkbox" name="new_role_pp_only" id="new_role_pp_only" value="1"> <?php _e('hidden', 'capsman-enhanced'); ?> </label>
-                            <?php endif; ?>
-
-                            <br />
-                            <input type="submit" name="CreateRole" value="<?php _e('Create', 'capsman-enhanced') ?>" class="button button-default" />
+                        <p>
+                            <input type="text" name="create-name" class="<?php echo $class;?>" placeholder="<?php _e('Role Name', 'capsman-enhanced') ?>" />
+                            <input type="submit" name="CreateRole" value="<?php _e('Create', 'capsman-enhanced') ?>" class="button pp-default-button" />
                         </p>
+                        <?php if( $support_pp_only_roles ) : ?>
+                            <p>
+                                <label for="new_role_pp_only" title="<?php _e('Make role available for supplemental assignment to Permission Groups only', 'capsman-enhanced');?>"> <input type="checkbox" name="new_role_pp_only" id="new_role_pp_only" value="1"> <?php _e('hidden', 'capsman-enhanced'); ?> </label>
+                            </p>
+                        <?php endif; ?>
                     </div>
                 </div>
 
@@ -1136,23 +1136,24 @@ if( defined('PRESSPERMIT_ACTIVE') ) {
                     <h2 class="hndle ui-sortable-handle"><?php defined('WPLANG') && WPLANG ? _e('Copy this role to', 'capsman-enhanced') : printf('Copy %s Role', translate_user_role($roles[$default])); ?></h2>
                     <div class="inside">
                         <?php $class = ( $support_pp_only_roles ) ? 'tight-text' : 'regular-text'; ?>
-                        <p><input type="text" name="copy-name"  class="<?php echo $class;?>" placeholder="<?php _e('Role Name', 'capsman-enhanced') ?>" />
-
-                            <?php if( $support_pp_only_roles ) : ?>
-                                <label for="copy_role_pp_only" title="<?php _e('Make role available for supplemental assignment to Permission Groups only', 'capsman-enhanced');?>"> <input type="checkbox" name="copy_role_pp_only" id="copy_role_pp_only" value="1"> <?php _e('hidden', 'capsman-enhanced'); ?> </label>
-                            <?php endif; ?>
-
-                            <br />
-                            <input type="submit" name="CopyRole" value="<?php _e('Copy', 'capsman-enhanced') ?>" class="button" />
+                        <p>
+                            <input type="text" name="copy-name"  class="<?php echo $class;?>" placeholder="<?php _e('Role Name', 'capsman-enhanced') ?>" />
+                            <input type="submit" name="CopyRole" value="<?php _e('Copy', 'capsman-enhanced') ?>" class="button pp-default-button" />
                         </p>
+                        <?php if( $support_pp_only_roles ) : ?>
+                            <p>
+                                <label for="copy_role_pp_only" title="<?php _e('Make role available for supplemental assignment to Permission Groups only', 'capsman-enhanced');?>"> <input type="checkbox" name="copy_role_pp_only" id="copy_role_pp_only" value="1"> <?php _e('hidden', 'capsman-enhanced'); ?> </label>
+                            </p>
+                        <?php endif; ?>
                     </div>
                 </div>
 
                 <div class="postbox">
                     <h2 class="hndle ui-sortable-handle"><?php _e('Add Capability', 'capsman-enhanced'); ?></h2>
                     <div class="inside">
-                        <p><input type="text" name="capability-name" class="regular-text" placeholder="<?php echo 'capability_name';?>" /><br />
-                            <input type="submit" name="AddCap" value="<?php _e('Add to role', 'capsman-enhanced') ?>" class="button" /></p>
+                        <p>
+                            <input type="text" name="capability-name" class="tight-text" placeholder="<?php echo 'capability_name';?>" />
+                            <input type="submit" name="AddCap" value="<?php _e('Add to role', 'capsman-enhanced') ?>" class="button pp-default-button" /></p>
                     </div>
                 </div>
 
