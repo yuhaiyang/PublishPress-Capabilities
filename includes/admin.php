@@ -262,7 +262,7 @@ if( defined('PRESSPERMIT_ACTIVE') ) {
                         $pp_cap_contents .= '<div data-content="' . $cap_type . '">';
                         $pp_cap_contents .= '<h3>' . $cap_type_names[$cap_type] . '</h3>';
 
-                        $pp_cap_contents .= "<table class='cme-typecaps cme-typecaps-$cap_type'>";
+                        $pp_cap_contents .= "<table class='form-table cme-typecaps cme-typecaps-$cap_type'>";
 
                         $pp_cap_contents .= '<tr><th></th>';
 
