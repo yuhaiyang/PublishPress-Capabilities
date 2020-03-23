@@ -357,7 +357,7 @@ if( defined('PRESSPERMIT_ACTIVE') ) {
                                                 $disabled = '';
                                                 $checked = checked(1, ! empty($rcaps[$cap_name]), false );
 
-                                                $checkbox = '<input type="checkbox"' . $title . ' name="caps[' . $cap_name . ']" value="1" ' . $checked . $disabled . ' />';
+                                                $checkbox = '<input type="checkbox"' . $title . ' name="caps[' . $cap_name . ']" value="1" ' . $checked . $disabled . ' /><span class="pp-checkbox-dynamic-label">' . ucwords($prop) . '</span>';
 
                                                 $type_caps [$cap_name] = true;
                                                 $display_row = true;

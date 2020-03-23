@@ -175,7 +175,11 @@ div.publishpress-caps-manage span.manage-members a:hover {text-decoration: under
 
 .publishpress-admin-wrapper {
 
-  /* Checkbox tables */
+  /* Checkboxes in tables */
+  .pp-checkbox-dynamic-label {
+    color: #777;
+  }
+
   table {
 
     &.cme-typecaps {
@@ -376,6 +380,11 @@ div.publishpress-caps-manage span.manage-members a:hover {text-decoration: under
 
   @media (min-width: 851px) {
 
+    /* Checkboxes in tables */
+    .pp-checkbox-dynamic-label {
+      display: none;
+    }
+
     /* Roles filter */
     input[name="SaveRole"] {
       float: right;
@@ -422,6 +431,17 @@ div.publishpress-caps-manage span.manage-members a:hover {text-decoration: under
   }
 
   @media (max-width: 850px) {
+
+    /* Checkboxes in tables */
+    table.cme-typecaps-edit tr th,
+    table.cme-typecaps-delete tr th,
+    table.cme-typecaps-read tr th {
+      display: none;
+    }
+
+    .pp-checkbox-dynamic-label {
+      display: inline-block;
+    }
 
     /* Horizontal tabs */
     .pp-cap-horizontal-tabs {

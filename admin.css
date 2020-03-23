@@ -193,7 +193,7 @@ div.publishpress-caps-manage span.manage-members a:hover {
   color: #655997;
 }
 .publishpress-admin-wrapper {
-  /* Checkbox tables */
+  /* Checkboxes in tables */
   /* Buttons */
   /*input[name="SaveRole"] {
     line-height: 36px;
@@ -204,6 +204,9 @@ div.publishpress-caps-manage span.manage-members a:hover {
   /* Checkboxes */
   /* Buttons */
   /* Horizontal tabs */
+}
+.publishpress-admin-wrapper .pp-checkbox-dynamic-label {
+  color: #777;
 }
 .publishpress-admin-wrapper table.cme-typecaps span.cap-x {
   display: none;
@@ -343,8 +346,12 @@ div.publishpress-caps-manage span.manage-members a:hover {
 }
 @media (min-width: 851px) {
   .publishpress-admin-wrapper {
+    /* Checkboxes in tables */
     /* Roles filter */
     /* Horizontal tabs */
+  }
+  .publishpress-admin-wrapper .pp-checkbox-dynamic-label {
+    display: none;
   }
   .publishpress-admin-wrapper input[name="SaveRole"] {
     float: right;
@@ -371,7 +378,16 @@ div.publishpress-caps-manage span.manage-members a:hover {
 }
 @media (max-width: 850px) {
   .publishpress-admin-wrapper {
+    /* Checkboxes in tables */
     /* Horizontal tabs */
+  }
+  .publishpress-admin-wrapper table.cme-typecaps-edit tr th,
+  .publishpress-admin-wrapper table.cme-typecaps-delete tr th,
+  .publishpress-admin-wrapper table.cme-typecaps-read tr th {
+    display: none;
+  }
+  .publishpress-admin-wrapper .pp-checkbox-dynamic-label {
+    display: inline-block;
   }
   .publishpress-admin-wrapper .pp-cap-horizontal-tabs__tabs {
     display: none;
