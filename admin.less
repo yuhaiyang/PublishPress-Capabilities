@@ -66,15 +66,11 @@ div.cme-cap-type-tables {
 border: 1px solid black;
 }
 
-table.cme-typecaps th,
+/*table.cme-typecaps th,
 table.cme-typecaps td {
 text-align: center;
 height: 2em;
-}
-
-table.cme-typecaps span.cap-x {
-display: none;
-}
+}*/
 
 h3.cme-cap-section {
 margin-top:0;
@@ -180,60 +176,70 @@ div.publishpress-caps-manage span.manage-members a:hover {text-decoration: under
 .publishpress-admin-wrapper {
 
   /* Checkbox tables */
-  td {
+  table {
 
-    &.cap-metagroup label span {
-      color: #080 !important;
-    }
-
-    // No
-    &.cap-no {
-      color:#777;
+    &.cme-typecaps {
 
       span.cap-x {
         display: none;
       }
     }
 
-    // Yes
-    &.cap-yes {
+    td {
 
-      span {
-        color: green;
-        font-weight: bold;
+      &.cap-metagroup label span {
+        color: #080 !important;
+      }
 
-        &.cap-x {
+      // No
+      &.cap-no {
+        color:#777;
+
+        span.cap-x {
           display: none;
         }
       }
-    }
 
-    // Negative
-    &.cap-neg {
+      // Yes
+      &.cap-yes {
 
-      label span {
-        color: red;
+        span {
+          color: green;
+          font-weight: bold;
+
+          &.cap-x {
+            display: none;
+          }
+        }
       }
 
-      input {
-        display:none;
+      // Negative
+      &.cap-neg {
+
+        label span {
+          color: red;
+        }
+
+        input {
+          display:none;
+        }
+
+        span.cap-x {
+          display:inline;
+        }
+
+        a.neg-cap {
+          display:none;
+        }
       }
 
-      span.cap-x {
-        display:inline;
+      // Locked
+      &.cap-locked a.neg-cap {
+        display: none !important;
       }
-
-      a.neg-cap {
-        display:none;
-      }
-    }
-
-    // Locked
-    &.cap-locked a.neg-cap {
-      display: none !important;
     }
   }
-  
+
   /* Buttons */
   /*input[name="SaveRole"] {
     line-height: 36px;

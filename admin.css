@@ -53,14 +53,11 @@ div.cme-listhoriz h3 {
 div.cme-cap-type-tables {
   border: 1px solid black;
 }
-table.cme-typecaps th,
+/*table.cme-typecaps th,
 table.cme-typecaps td {
-  text-align: center;
-  height: 2em;
-}
-table.cme-typecaps span.cap-x {
-  display: none;
-}
+text-align: center;
+height: 2em;
+}*/
 h3.cme-cap-section {
   margin-top: 0;
 }
@@ -208,35 +205,38 @@ div.publishpress-caps-manage span.manage-members a:hover {
   /* Buttons */
   /* Horizontal tabs */
 }
-.publishpress-admin-wrapper td.cap-metagroup label span {
-  color: #080 !important;
-}
-.publishpress-admin-wrapper td.cap-no {
-  color: #777;
-}
-.publishpress-admin-wrapper td.cap-no span.cap-x {
+.publishpress-admin-wrapper table.cme-typecaps span.cap-x {
   display: none;
 }
-.publishpress-admin-wrapper td.cap-yes span {
+.publishpress-admin-wrapper table td.cap-metagroup label span {
+  color: #080 !important;
+}
+.publishpress-admin-wrapper table td.cap-no {
+  color: #777;
+}
+.publishpress-admin-wrapper table td.cap-no span.cap-x {
+  display: none;
+}
+.publishpress-admin-wrapper table td.cap-yes span {
   color: green;
   font-weight: bold;
 }
-.publishpress-admin-wrapper td.cap-yes span.cap-x {
+.publishpress-admin-wrapper table td.cap-yes span.cap-x {
   display: none;
 }
-.publishpress-admin-wrapper td.cap-neg label span {
+.publishpress-admin-wrapper table td.cap-neg label span {
   color: red;
 }
-.publishpress-admin-wrapper td.cap-neg input {
+.publishpress-admin-wrapper table td.cap-neg input {
   display: none;
 }
-.publishpress-admin-wrapper td.cap-neg span.cap-x {
+.publishpress-admin-wrapper table td.cap-neg span.cap-x {
   display: inline;
 }
-.publishpress-admin-wrapper td.cap-neg a.neg-cap {
+.publishpress-admin-wrapper table td.cap-neg a.neg-cap {
   display: none;
 }
-.publishpress-admin-wrapper td.cap-locked a.neg-cap {
+.publishpress-admin-wrapper table td.cap-locked a.neg-cap {
   display: none !important;
 }
 .publishpress-admin-wrapper .pp-button-link {
