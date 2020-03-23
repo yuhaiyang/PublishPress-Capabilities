@@ -86,35 +86,6 @@ a.cme-switch-all {
   vertical-align: middle;
   text-decoration: line-through;
 }
-td.cap-yes span {
-  color: green;
-  font-weight: bold;
-}
-td.cap-no {
-  color: #777;
-}
-td.cap-neg label span {
-  color: red;
-}
-td.cap-neg input {
-  display: none;
-}
-td.cap-no span.cap-x,
-td.cap-yes span.cap-x {
-  display: none;
-}
-td.cap-neg span.cap-x {
-  display: inline;
-}
-td.cap-neg a.neg-cap {
-  display: none;
-}
-td.cap-metagroup label span {
-  color: #080 !important;
-}
-td.cap-locked a.neg-cap {
-  display: none !important;
-}
 a.type-off,
 a.neg-cap,
 a.cme-neg-all,
@@ -225,7 +196,8 @@ div.publishpress-caps-manage span.manage-members a:hover {
   color: #655997;
 }
 .publishpress-admin-wrapper {
-  /* Roles filter */
+  /* Checkbox tables */
+  /* Buttons */
   /*input[name="SaveRole"] {
     line-height: 36px;
     padding-left: 15px;
@@ -235,6 +207,37 @@ div.publishpress-caps-manage span.manage-members a:hover {
   /* Checkboxes */
   /* Buttons */
   /* Horizontal tabs */
+}
+.publishpress-admin-wrapper td.cap-metagroup label span {
+  color: #080 !important;
+}
+.publishpress-admin-wrapper td.cap-no {
+  color: #777;
+}
+.publishpress-admin-wrapper td.cap-no span.cap-x {
+  display: none;
+}
+.publishpress-admin-wrapper td.cap-yes span {
+  color: green;
+  font-weight: bold;
+}
+.publishpress-admin-wrapper td.cap-yes span.cap-x {
+  display: none;
+}
+.publishpress-admin-wrapper td.cap-neg label span {
+  color: red;
+}
+.publishpress-admin-wrapper td.cap-neg input {
+  display: none;
+}
+.publishpress-admin-wrapper td.cap-neg span.cap-x {
+  display: inline;
+}
+.publishpress-admin-wrapper td.cap-neg a.neg-cap {
+  display: none;
+}
+.publishpress-admin-wrapper td.cap-locked a.neg-cap {
+  display: none !important;
 }
 .publishpress-admin-wrapper .pp-button-link {
   line-height: 28px;
