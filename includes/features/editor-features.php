@@ -82,6 +82,19 @@ $classic_editor = pp_capabilities_is_classic_editor_available();
                                 $('li.classic-tab').click(function() {
                                     $('div.publishpress-filters input[name=ppc-tab]').val('classic');
                                 });
+
+                                // Tabs and Content display
+                				$('.ppc-capabilities-tabs > ul > li').click( function() {
+                					var $tab = $(this).attr('data-content');
+
+                					// Show current Content
+                					$('.ppc-capabilities-content > div').hide();
+                					$('#' + $tab).show();
+
+                					// Active current Tab
+                					$('.ppc-capabilities-tabs > ul > li').removeClass('ppc-capabilities-tab-active');
+                					$(this).addClass('ppc-capabilities-tab-active');
+                				});
                             });
                             /* ]]> */
                             </script>
@@ -99,20 +112,18 @@ $classic_editor = pp_capabilities_is_classic_editor_available();
                             <div id="pp-capability-menu-wrapper" class="postbox">
                                 <div class="pp-capability-menus">
 
-                                    <div class="pp-capability-menus-wrap">
-                                        <div id="pp-capability-menus-general"
-                                                class="pp-capability-menus-content editable-role"
-                                                style="display: block;">
-                                            <?php
-                                            $sn = 0;
-                                            include(dirname(__FILE__) . '/editor-features-gutenberg.php');
+                                    <div id="pp-capability-menus-general"
+                                            class="pp-capability-menus-content editable-role"
+                                            style="display: block;">
+                                        <?php
+                                        $sn = 0;
+                                        include(dirname(__FILE__) . '/editor-features-gutenberg.php');
 
-                                            if ($classic_editor) {
-                                                include(dirname(__FILE__) . '/editor-features-classic.php');
-                                            }
-                                            ?>
+                                        if ($classic_editor) {
+                                            include(dirname(__FILE__) . '/editor-features-classic.php');
+                                        }
+                                        ?>
 
-                                        </div>
                                     </div>
 
                                 </div>
@@ -247,7 +258,7 @@ $classic_editor = pp_capabilities_is_classic_editor_available();
             e.preventDefault();
             $('.editor-features-tab').removeClass('nav-tab-active');
             $(this).addClass('nav-tab-active');
-            $('.pp-capability-menus-select').hide();
+            $('.ppc-editor-features-item').hide();
             $($(this).attr('data-tab')).show();
         });
 
