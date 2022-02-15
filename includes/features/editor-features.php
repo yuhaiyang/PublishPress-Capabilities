@@ -157,7 +157,6 @@ $active_tab_slug = (!empty($_REQUEST['pp_caps_tab'])) ? sanitize_key($_REQUEST['
                                                             $active_style = ($type_name === $active_tab_slug) ? '' : 'display:none;';
                                                             ?>
                                                             <div id="cme-cap-type-tables-<?php esc_attr_e($type_name); ?>" style="<?php esc_attr_e($active_style); ?>">
-                                                                <h3><?php esc_html_e($type_obj->labels->singular_name); ?></h3>
                                                                 <?php
                                                                 include(dirname(__FILE__) . '/editor-features-gutenberg.php');
 
@@ -337,7 +336,10 @@ $active_tab_slug = (!empty($_REQUEST['pp_caps_tab'])) ? sanitize_key($_REQUEST['
             $('.editor-features-tab').removeClass('nav-tab-active');
             $(this).addClass('nav-tab-active');
             $('.pp-capability-menus-select').hide();
+            $('.editor-features-classic-show').hide();
+            $('.editor-features-gutenberg-show').hide();
             $($(this).attr('data-tab')).show();
+            $($(this).attr('data-tab')+'-show').show();
         });
 
     });
